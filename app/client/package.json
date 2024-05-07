@@ -302,7 +302,7 @@
     "@types/zipcelx": "^1.5.0",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
-    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-lodash": "latest",
     "babel-plugin-module-resolver": "^4.1.0",
     "chalk": "^4.1.1",
     "compression-webpack-plugin": "^10.0.0",
@@ -396,5 +396,10 @@
     "@blueprintjs/icons": "3.22.0",
     "@types/react": "^17.0.2",
     "postcss": "8.4.31"
+  },
+  "overrides": {
+    "babel-plugin-lodash": {
+      "@babel/types": "~7.20.0"
+    }
   }
 }

@@ -4,6 +4,7 @@
 
 import {promises as fs} from "fs";
 import path from "path";
+import { fileURLToPath } from 'url';
 
 async function findInnerClassDefinitions(directory) {
   let isPass = true;
@@ -83,7 +84,9 @@ async function processJavaFile(filePath) {
 // Can't use `import.meta.dirname` because it's not available in Node.js 18.
 // And v18 is what is included in GitHub Actions today.
 // See <https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#language-and-runtime>.
-const directoryPath = import.meta.resolve("..").replace("file://", "");
+const directoryPath = path.resolve(fileURLToPath(import.meta.url), '..');
+
+
 
 findInnerClassDefinitions(directoryPath)
   .then(isPass => {

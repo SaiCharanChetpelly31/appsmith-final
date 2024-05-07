@@ -26,6 +26,8 @@ deploy/helm/charts
 ## This is for integrating design-system changes during development
 app/client/.yalc/
 app/client/yalc.lock
+app/client/data
+app/server/data
 
 # editor related
 .vscode/*
